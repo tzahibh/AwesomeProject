@@ -6,6 +6,8 @@ import {
 
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import { Counter } from './features/counter/counter';
+
 
 function App(): React.JSX.Element {
 
@@ -13,6 +15,7 @@ function App(): React.JSX.Element {
     <SafeAreaView>
        <Provider store={store}>
       <Text>example</Text>
+      <Counter/>
     </Provider>
     </SafeAreaView>
   );
