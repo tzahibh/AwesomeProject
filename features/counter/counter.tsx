@@ -7,7 +7,7 @@ import {
   incrementAsync,
   selectCount,
 } from "../../reducers/counterSlice";
-import { Button, Text } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export function Counter() {
   const count = useSelector(selectCount);
@@ -17,19 +17,23 @@ export function Counter() {
   return (
     <>
         <Text>counter: {count}</Text>
+        <View style={styles.container}>
 
-        <Button
-        onPress={() => dispatch(increment())}
-        title="Increment value"
-        color="#841584"
-        accessibilityLabel="Increment value"/>
+          <Button
+          onPress={() => dispatch(increment())}
+          title="Increment value"
+          color="#841584"
+          style={styles.buttonStyle}
+          accessibilityLabel="Increment value"/>
+          
 
-        <Button
-        onPress={() => dispatch(decrement())}
-        title="Decrement value"
-        color="#841584"
+          <Button
+          onPress={() => dispatch(decrement())}
+          title="Decrement value"
+          color="#841584"
+          style={styles.buttonStyle}
         accessibilityLabel="Decrement value"/>
-
+        </View>
     </>
     //   <div className={styles.row}>
     //     <button
@@ -73,3 +77,13 @@ export function Counter() {
     // </>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+  },
+  buttonstyle:{
+    
+  }
+});
